@@ -7,12 +7,14 @@ app=create_app()
 with app.app_context():
     
 
-        admin2 = Admin.query.filter_by(email="Nguiemaurine2@gmail.com").first()
-        admin3=Admin.query.filter_by(email="hobryskwadjo23@gmail.com").first()
+        admin1 = Admin(email="danikoumba7@gmail.com",password=generate_password_hash('123daniel'))
+        admin2 = Admin(email="mohamed@gmail.com",password=generate_password_hash('123momo'))
+        admin3=Admin(email="champion@gmail.com",password=generate_password_hash('123champion'))
+        admin1.role='admin suppreme'
         admin2.role='bonus'
         admin3.role='admin secondaire'
-        admin3.password=generate_password_hash('123jhon')
-      
+       
+        db.session.add(admin1)
         db.session.add(admin2)
         db.session.add(admin3)
         db.session.commit()
