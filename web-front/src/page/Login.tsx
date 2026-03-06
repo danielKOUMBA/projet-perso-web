@@ -36,30 +36,72 @@ export default function Login(){
             }
        setloader(false)
     }
-    return(<>
+    
   
-   <div className="flex justify-center font-bold">
-         < p className="color-black ">Connexion</p>
-   </div>
-   {error && <div className="bg-red-500 text-center p-2 w-1/2 flex justify-center mx-auto rounded-lg">
-      {error}
-    </div>}
-    <div className="flex justify-center items-center p-4 pb-40">
-        <form onSubmit={handleSubmit} className=" rounded-lg p-2">
-            <input type="email" 
-            placeholder="Email" 
-            value={email}
-            className="mt-1 mb-5 block w-full border border-gray-700 rounded-lg px-3 py-2  focus:outline-none bg-black text-white"
-             required onChange={(e)=>setEmail(e.target.value)}/>
-            <input type="password" 
-            placeholder="mot de passe" 
-            value={password}
-            className="mt-1 mb-5 block w-full border border-gray-700 rounded-md px-3 py-2  focus:outline-none  bg-black text-white" 
-            required onChange={(e)=>setPassword(e.target.value)}/>
-            <button type="submit" className="mt-1 block bg-black text-white rounded-lg border-b  p-2 cursor-pointer" >{loader? 'connexion...':'se connecter'}</button>
-            <Link to='/register' className="text-green-bold hover:underline">modifier mon mot de passe?</Link>
+    return(
+        <>
+        <div className="min-h-screen flex flex-col justify-between bg-green-50">
+        
+        {/* CONTENU */}
+        <div className="flex flex-col items-center justify-center flex-grow">
+        
+       
+        
+        <h1 className="text-2xl font-bold text-green-700 mb-6">
+        Connexion
+        </h1>
+        
+        {error && (
+        <div className="bg-red-100 text-red-600 px-4 py-2 rounded-lg mb-4 shadow">
+        {error}
+        </div>
+        )}
+        
+        <form
+        onSubmit={handleSubmit}
+        className="bg-white shadow-lg rounded-xl p-8 w-80 border border-green-100"
+        >
+        
+        <input
+        type="email"
+        placeholder="Email"
+        value={email}
+        required
+        onChange={(e)=>setEmail(e.target.value)}
+        className="w-full border border-gray-300 rounded-lg px-3 py-2 mb-4 focus:outline-none focus:border-green-500"
+        />
+        
+        <input
+        type="password"
+        placeholder="Mot de passe"
+        value={password}
+        required
+        onChange={(e)=>setPassword(e.target.value)}
+        className="w-full border border-gray-300 rounded-lg px-3 py-2 mb-5 focus:outline-none focus:border-green-500"
+        />
+        
+        <button
+        type="submit"
+        className="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition cursor-pointer"
+        >
+        {loader ? "Connexion..." : "Se connecter"}
+        </button>
+        
+        <Link
+        to="/register"
+        className="block text-center text-green-700 mt-4 hover:underline"
+        >
+        Modifier mon mot de passe ?
+        </Link>
+        
         </form>
-    </div>
-    <Footer/>
-    </>)
-}
+        
+        </div>
+        
+        <Footer/>
+        
+        </div>
+        </>
+        )
+        }
+        

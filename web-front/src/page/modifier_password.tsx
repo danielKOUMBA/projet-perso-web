@@ -30,10 +30,7 @@ export default function Modifier_password(){
     }
     return(<>
         <form onSubmit={handleSubmit}>
-            <div className="flex items-center justify-center gap-2">
-                <h1 className="font-bold">the view optique vision</h1>
-                <img src={logos} alt="logos du site" className="w-14 rounded-lg"/>
-            </div>
+         
           {erreur && <div className="w-1/3 bg-red-500 rounded-lg mx-auto p-1 ">
                 {erreur}
             </div>}
