@@ -18,7 +18,7 @@ def create_app(config_class=Config):
     with app.app_context():
         db.create_all()
     migrate.init_app(app,db)
-    cors.init_app(app,supports_credentials=True,origins=['http://localhost:5173'])
+    cors.init_app(app,supports_credentials=True,origins=['https://projet-perso-web.vercel.app'])
     jwt.init_app(app)
     if app.config.get('TESTING'):
         return app
