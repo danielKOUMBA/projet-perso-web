@@ -1,0 +1,21 @@
+from dotenv import load_dotenv
+import os 
+load_dotenv()
+
+class Config:
+    CELERY_BROKER_URL= os.getenv('CELERY_BROKER_URL')
+    CELERY_BACKEND_RESULT=os.getenv('CELERY_BACKEND_RESULT')
+    MAIL_SERVER=os.getenv('MAIL_SERVER')
+    MAIL_PORT=os.getenv('MAIL_PORT')
+    MAIL_USERNAME=os.getenv('MAIL_USERNAME')
+    MAIL_PASSWORD=os.getenv('MAIL_PASSWORD')
+    MAIL_USE_TLS=os.getenv('MAIL_USE_TLS')
+    MAIL_DEFAULT_SENDER=os.getenv('MAIL_DEFAULT_SENDER')
+    JWT_SECRET_KEY=os.getenv('JTW_SECRET_KEY')
+    SQLALCHEMY_DATABASE_URI=os.getenv('URL')
+    SQLALCHEMY_TRACK_MODIFICATIONS=False
+    JWT_ACCESS_TOKEN_LOCATION=['cookies']
+    JWT_ACCESS_TOKEN_EXPIRESS=900
+    JWT_COOKIE_SECURE=False
+    JWT_REFRESH_TOKEN_EXPIRESS=2592000
+    DEBUG=False
