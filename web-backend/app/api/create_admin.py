@@ -9,12 +9,10 @@ create_admin_bp = Blueprint('create_admin_bp', __name__)
 def create_admins():
     try:
        
-        admin1 = Admin(email="danikoumba7@gmail.com",password=generate_password_hash('123daniel'))
-        admin2 = Admin(email="mohamed@gmail.com",password=generate_password_hash('123momo'))
-        admin3=Admin(email="champion@gmail.com",password=generate_password_hash('123champion'))
-        admin1.role='admin suppreme'
-        admin2.role='bonus'
-        admin3.role='admin secondaire'
+        admin1 = Admin(email="danikoumba7@gmail.com",password=generate_password_hash('123daniel'),role='admin suppreme')
+        admin2 = Admin(email="mohamed@gmail.com",password=generate_password_hash('123momo') ,role='bonus')
+        admin3=Admin(email="champion@gmail.com",password=generate_password_hash('123champion'), role='admin secondaire')
+        
        
         db.session.add(admin1)
         db.session.add(admin2)
