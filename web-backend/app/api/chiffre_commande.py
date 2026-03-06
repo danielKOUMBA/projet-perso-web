@@ -47,19 +47,19 @@ def chiffre_commande():
         if dateFrom_final <= datetime.strptime(str(x['date']),'%Y-%m-%d %H:%M:%S')<=dateToFinal :
             commande_accepter.append(x)
     value=sum(x['prix'] for x in commande_accepter)
-    optique=sum(x['prix'] for x in commande_accepter if x['type']=='Optique')
-    solaire=sum(x['prix'] for x in commande_accepter if x['type']=='Solaire')
-    percee=sum(x['prix'] for x in commande_accepter if x['type']=='Percee')
-    photochromique=sum(x['prix'] for x in commande_accepter if x['type']=='Photochromique')
-    accessoire=sum(x['prix'] for x in commande_accepter if x['type']=='Accessoire')
-    progressive=sum(x['prix'] for x in commande_accepter if x['type']=='Progressive')
+    tee_shirt=sum(x['prix'] for x in commande_accepter if x['type']=='tee shirt')
+    Basket=sum(x['prix'] for x in commande_accepter if x['type']=='Basket')
+    chemise=sum(x['prix'] for x in commande_accepter if x['type']=='chemise')
+    Polos=sum(x['prix'] for x in commande_accepter if x['type']=='Polos')
+    Bijoux=sum(x['prix'] for x in commande_accepter if x['type']=='Bijoux')
+    Pantalon=sum(x['prix'] for x in commande_accepter if x['type']=='Pantalon')
     return jsonify({'data': value,
-                    'optique':optique,
-                    'solaire':solaire,
-                    'percee':percee,
-                    'photochromique':photochromique,
-                    'accessoire':accessoire,
-                    'progressive':progressive
+                    'tee shirt':tee_shirt,
+                    'Basket':Basket,
+                    'chemise':chemise,
+                    'Polos':Polos,
+                    'Bijoux':Bijoux,
+                    'Pantalon':Pantalon
                     })
    
        

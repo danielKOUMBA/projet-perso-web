@@ -37,9 +37,7 @@ export default function Login(){
        setloader(false)
     }
     return(<>
-   <div className="flex items-center justify-center gap-2">
-     <img src={logos} alt="logos" className="w-full " />
-   </div>
+  
    <div className="flex justify-center font-bold">
          < p className="color-black ">Connexion</p>
    </div>
@@ -59,7 +57,7 @@ export default function Login(){
             className="mt-1 mb-5 block w-full border border-gray-700 rounded-md px-3 py-2  focus:outline-none  bg-black text-white" 
             required onChange={(e)=>setPassword(e.target.value)}/>
             <button type="submit" className="mt-1 block bg-black text-white rounded-lg border-b  p-2 cursor-pointer" >{loader? 'connexion...':'se connecter'}</button>
-            <Link to='/register' className="text-blue-bold hover:underline">modifier mon mot de passe?</Link>
+            <Link to='/register' className="text-green-bold hover:underline">modifier mon mot de passe?</Link>
         </form>
     </div>
     <Footer/>

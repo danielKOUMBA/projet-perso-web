@@ -41,7 +41,7 @@ export default function Modifier_password(){
                 <input type="email" placeholder="email..." className="mt-1 block border-b border-black p-1 text-black "required onChange={(e)=>setEmail(e.target.value)}/>
                 <input type="password" placeholder="ancien mot de passe..." className="mt-1 block border-b border-black p-1 text-black" required onChange={(e)=>setOldPassword(e.target.value)}/>
                 <input type="password" placeholder="nouveau mot de passe..." className="mt-1 block border-b border-black p-1 text-black" required onChange={(e)=>setNewPassword(e.target.value)}/>
-                <button type="submit" className="mt-1 p-1 rounded-lg bg-blue-500 border border-black">modifier</button>
+                <button type="submit" className="mt-1 p-1 rounded-lg bg-green-500 border border-black">modifier</button>
             </div>
         </form>
         

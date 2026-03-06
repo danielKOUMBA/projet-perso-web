@@ -123,18 +123,18 @@ async function handleEdit(commandes:Todo,e){
                     <input type="number" placeholder="numero du client..."  className="mt-1 block p-1 border-b border-black " onChange={(e)=>setNumero(e.target.value)} required/>
                     <input type="text" placeholder="produits commander..."  className="mt-1 block p-1 border-b border-black "  onChange={(e)=>setProduit(e.target.value)} required/>
                     <select value={type} onChange={(e)=>setType(e.target.value)} required>
-                        <option value="" disabled selected>Choisir un type de paire</option>
-                        <option value="Optique">Optique</option>
-                        <option value="Progressive">Progressive</option>
-                        <option value="Photochromique">Photochromique</option>
-                        <option value="Solaire">Solaire</option>
-                        <option value="Percee">Percee</option>
-                        <option value="Accessoire">Accessoire</option>
+                        <option value="" disabled selected>Choisir un type de produits</option>
+                        <option value="tee shirt">tee shirt</option>
+                        <option value="Basket">Basket</option>
+                        <option value="chemise">chemise</option>
+                        <option value="Polos">Polos</option>
+                        <option value="Bijoux">Bijoux</option>
+                        <option value="Pantalon">Pantalon</option>
                     </select>
                     <input type="date"  className="mt-1 block p-1 border-b border-black " onChange={(e)=>setDate(e.target.value)} required/>
                     <input type="number" placeholder="prix avancer..."  className="mt-1 block p-1 border-b border-black " onChange={(e)=>setPrix_avancer(e.target.value)}required/>
                     <input type="number" placeholder="prix total..."  className="mt-1 block p-1 border-b border-black " onChange={(e)=>setPrix_payer(e.target.value)}required/>
-                    <button type="submit" className="mt-2 border border-blue-900 bg-blue-100 text-black rounded-lg p-1 cursor-pointer shadow-lg">enregistrer</button>
+                    <button type="submit" className="mt-2 border border-green-900 bg-green-100 text-black rounded-lg p-1 cursor-pointer shadow-lg">enregistrer</button>
                     {res && <div className="bg-white inline-flex space-x-3 p-3 text-sm rounded border border-gray-200">
     <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M16.5 8.31V9a7.5 7.5 0 1 1-4.447-6.855M16.5 3 9 10.508l-2.25-2.25" stroke="#22C55E"  />
@@ -158,14 +158,14 @@ async function handleEdit(commandes:Todo,e){
       <div className="absolute top-110 z-1 bg-white p-5 mx-3 flex flex-wrap justify-center border border-black rounded-lg m-2">
         <form>
             <p className="font-bold absolute right-2 top-0 w-2" onClick={()=>setUpdate(null)}>X</p>
-            <input  className="mt-1 block p-1 border-b border-blue " type="text" value={update.nom} onChange={(e)=>setUpdate({...update,nom:e.target.value})}/>
-            <input  className="mt-1 block p-1 border-b border-blue " type="number" value={update.numero}  onChange={(e)=>setUpdate({...update,numero:e.target.value})}/>
-            <input  className="mt-1 block p-1 border-b border-blue " type="text" value={update.produits} onChange={(e)=>setUpdate({...update,produits:e.target.value})}/>
-            <input  className="mt-1 block p-1 border-b border-blue "  type="text" value={update.prix_avancer} onChange={(e)=>setUpdate({...update,prix_avancer:e.target.value})}/>
-            <input  className="mt-1 block p-1 border-b border-blue "  type="number" value={update.prix_total} onChange={(e)=>setUpdate({...update,prix_total:e.target.value})}/>
-            <input  className="mt-1 block p-1 border-b border-blue " type="date" value={update.date} onChange={(e)=>setUpdate({...update,date:e.target.value})} />
-            <input  className="mt-1 block p-1 border-b border-blue " type="text" value={update.type} onChange={(e)=>setUpdate({...update,type:e.target.value})} />
-            <button className="mt-2 border border-blue-900 bg-blue-100 text-black rounded-lg p-1 cursor-pointer shadow-lg" onClick={(e)=>handleEdit(update,e)}>enregistrer</button>
+            <input  className="mt-1 block p-1 border-b border-green " type="text" value={update.nom} onChange={(e)=>setUpdate({...update,nom:e.target.value})}/>
+            <input  className="mt-1 block p-1 border-b border-green " type="number" value={update.numero}  onChange={(e)=>setUpdate({...update,numero:e.target.value})}/>
+            <input  className="mt-1 block p-1 border-b border-green " type="text" value={update.produits} onChange={(e)=>setUpdate({...update,produits:e.target.value})}/>
+            <input  className="mt-1 block p-1 border-b border-green "  type="text" value={update.prix_avancer} onChange={(e)=>setUpdate({...update,prix_avancer:e.target.value})}/>
+            <input  className="mt-1 block p-1 border-b border-green "  type="number" value={update.prix_total} onChange={(e)=>setUpdate({...update,prix_total:e.target.value})}/>
+            <input  className="mt-1 block p-1 border-b border-green " type="date" value={update.date} onChange={(e)=>setUpdate({...update,date:e.target.value})} />
+            <input  className="mt-1 block p-1 border-b border-green " type="text" value={update.type} onChange={(e)=>setUpdate({...update,type:e.target.value})} />
+            <button className="mt-2 border border-green-900 bg-green-100 text-black rounded-lg p-1 cursor-pointer shadow-lg" onClick={(e)=>handleEdit(update,e)}>enregistrer</button>
            
         </form>
       </div>
@@ -174,7 +174,7 @@ async function handleEdit(commandes:Todo,e){
      
     <div className="flex justify-center">
         <div className="absolute top-130 pb-50 flex items-center gap-3">
-            <button className="border border-blue-900 bg-blue-100 p-2 rounded-lg cursor-pointer shadow-lg" onClick={AllCommande}>{loader? 'chargement...':'voir toutes les commandes'}</button>
+            <button className="border border-green-900 bg-green-100 p-2 rounded-lg cursor-pointer shadow-lg" onClick={AllCommande}>{loader? 'chargement...':'voir toutes les commandes'}</button>
 
         </div>
     </div>
@@ -207,7 +207,7 @@ async function handleEdit(commandes:Todo,e){
                         <button onClick={()=>OnDelete(commande)}>
                             <TrashIcon className="w-6" color="red"/>
                         </button>  
-                        <button className="bg-blue-100 p-1 border border-black rounded-lg shadow-lg" onClick={()=>setUpdate(commande)}>
+                        <button className="bg-green-100 p-1 border border-black rounded-lg shadow-lg" onClick={()=>setUpdate(commande)}>
                             modifier
                         </button>
                     </div>

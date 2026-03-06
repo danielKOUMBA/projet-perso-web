@@ -9,12 +9,12 @@ export default function Header(){
   const [logout,setLogout]=useState(false)
     return(<>
        <header>
-           <div className="fixed z-51 top-0 left-0 w-full bg-blue-100 flex  justify-between items-center gap-2 p-2 ">
+           <div className="fixed z-51 top-0 left-0 w-full bg-green-200 flex  justify-between items-center gap-2 p-2 ">
               <div className="flex items-center gap-3">
               {menu?(
                  <XMarkIcon className='w-7' onClick={()=>setMenu(prev=>!prev)}/>
                ):(<Bars3Icon className='w-7' onClick={()=>setMenu((prev)=>(!prev))}/>)}
-               <img src={logos} alt="logos" className="w-10 rounded-lg"/>
+               
               </div>
               <div className="relative flex items-center gap-3">
                   <button onClick={()=>setLogout((prev)=>(!prev))}>
@@ -34,22 +34,22 @@ export default function Header(){
     
       <main>
         <div>
-          <div className={`fixed top-13 z-50 overflow-hidden transition-all duration-800 ${menu?'max-w-full':'max-w-0'}`}>
-            <div className="w-2/3 h-screen bg-blue-200 p-4 ">
+          <div className={`fixed top-10 z-50 overflow-hidden transition-all duration-800 ${menu?'max-w-full':'max-w-0'}`}>
+            <div className="w-2/3 h-screen bg-green-200 p-4 ">
               <ul className="space-y-4">
-                <li className=" w-full hover:bg-blue-100 p-3 cursor-pointer border-b border-blue-400 ">
+                <li className=" w-full hover:bg-green-100 p-3 cursor-pointer border-b border-blue-400 ">
                   <Link to='/accueil'>Accueil</Link>
                 </li>
-                <li className=" w-full hover:bg-blue-100 p-3 cursor-pointer border-b border-blue-400 ">
+                <li className=" w-full hover:bg-green-100 p-3 cursor-pointer border-b border-blue-400 ">
                   <Link to='/commandes'>Gestion des commandes</Link>
                 </li>
-                <li className=" w-full hover:bg-blue-100 p-3 cursor-pointer border-b border-blue-400 ">
+                <li className=" w-full hover:bg-green-100 p-3 cursor-pointer border-b border-blue-400 ">
                   <Link to='/tresor'>Gestions des tresoreries</Link>
                 </li>
-                <li className=" w-full hover:bg-blue-100 p-3 cursor-pointer border-b border-blue-400 ">
+                <li className=" w-full hover:bg-green-100 p-3 cursor-pointer border-b border-blue-400 ">
                   <Link to='/cout'>Gestions des couts</Link>
                 </li>
-                <li className=" w-full hover:bg-blue-100 p-3 cursor-pointer border-b border-blue-400 ">
+                <li className=" w-full hover:bg-green-100 p-3 cursor-pointer border-b border-blue-400 ">
                   <Link to='/chiffre'>Affichage du chiffre d'affaire</Link>
                 </li>
               </ul>

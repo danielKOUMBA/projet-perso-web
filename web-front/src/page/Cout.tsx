@@ -90,7 +90,7 @@ export default function Cout(){
                          </select>
                         <input type="date" placeholder="date du jour..." className="mt-1 block p-1 border-b border-black " value={date}  onChange={(e)=>setDate(e.target.value)} required />
                         <input type="number" placeholder="somme de la depense..." className="mt-1 block p-1 border-b border-black " value={somme}  onChange={(e)=>setSomme(e.target.value)} required/>
-                        <button type="submit" className="mt-2 border border-blue-900 bg-blue-100 text-black rounded-lg p-1 cursor-pointer">enregistrer</button>
+                        <button type="submit" className="mt-2 border border-green-900 bg-green-100 text-black rounded-lg p-1 cursor-pointer">enregistrer</button>
                         {res&& <div className="mt-1 bg-green-500 p-1 rounded-lg">{res}</div>}
                 </form> 
             </div>
@@ -98,7 +98,7 @@ export default function Cout(){
         
          <div className="flex justify-center">
             <div className="absolute top-120 flex gap-3">
-                    <button className="border border-blue-900 bg-blue-100 p-2 rounded-lg cursor-pointer" onClick={allCout}><p>
+                    <button className="border border-green-900 bg-green-100 p-2 rounded-lg cursor-pointer" onClick={allCout}><p>
                     {loader? 'chargement...':'voir toutes les depenses'} 
                             </p>
                         </button>
