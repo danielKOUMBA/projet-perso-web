@@ -1,6 +1,7 @@
+
 from flask import Blueprint, request, jsonify, make_response
 from app.models import Admin
-from flask_jwt_extended import  create_refresh_token,create_access_token
+from flask_jwt_extended import create_refresh_token, create_access_token
 from werkzeug.security import check_password_hash
 
 login_bp = Blueprint('login_bp', __name__)
@@ -8,32 +9,37 @@ login_bp = Blueprint('login_bp', __name__)
 @login_bp.route('/login', methods=['POST'])
 def login():
     data = request.get_json()
+
+    if not data:
+        return jsonify({'erreur': 'Données manquantes'}), 400
+
     email = data.get('email')
     password = data.get('password')
 
     user = Admin.query.filter_by(email=email).first()
 
-    if user and check_password_hash(user.password, password): 
-        # Tokens
+    if user and check_password_hash(user.password, password):
         access_token = create_access_token(identity=user.role)
         refresh_token = create_refresh_token(identity=user.role)
-        # Réponse
+
         response = make_response(jsonify({
-            "token": access_token  # on envoie l'access token dans le body
+        "token": access_token
         }))
-        # On place le refresh token dans un cookie HTTPOnly
+
         response.set_cookie(
-            "refresh_token",
-            refresh_token,
-            httponly=True,
-             secure=False,      # mettre True en production (HTTPS)
-            samesite="None",    # obligatoire pour React localhost
-            path="/",
-            max_age=7 * 24 * 60 * 60
+        "refresh_token",
+        refresh_token,
+        httponly=True,
+        secure=False, # True en production
+        samesite="None",
+        path="/",
+        max_age=7 * 24 * 60 * 60
         )
+
         return response
-    
-    return jsonify({'erreur':'"Email ou mot de passe incorrect"'}), 401
+
+    # erreur envoyée clairement au frontend
+    return jsonify({'erreur': 'Email ou mot de passe incorrect'}), 401
 
 
-    
+        
