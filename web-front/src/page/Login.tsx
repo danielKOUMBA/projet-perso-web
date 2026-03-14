@@ -1,5 +1,4 @@
 import React, { useState} from "react"
-import logos from '../assets/logos.JPG'
 import { apiFetch } from "../api/api"
 import setToken from "../api/api"
 import { Link, useNavigate } from "react-router-dom"
@@ -32,6 +31,7 @@ export default function Login(){
                 }
 
             }catch(err){
+                setError(err.message || 'Email ou mot de passe incorrect')
                 console.log('erreur fetch:',err)
             }
        setloader(false)
@@ -42,7 +42,7 @@ export default function Login(){
         <>
         <div className="min-h-screen flex flex-col justify-between bg-green-50">
         
-        {/* CONTENU */}
+        
         <div className="flex flex-col items-center justify-center flex-grow">
         
        

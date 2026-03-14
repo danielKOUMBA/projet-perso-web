@@ -154,13 +154,13 @@ async function handleEdit(commandes:Todo,e){
         className="w-full p-2 border border-green-300 rounded-md bg-white"
         required
         >
-        <option value="" disabled>Choisir un type de paire</option>
-        <option value="Optique">Optique</option>
-        <option value="Progressive">Progressive</option>
-        <option value="Photochromique">Photochromique</option>
-        <option value="Solaire">Solaire</option>
-        <option value="Percee">Percee</option>
-        <option value="Accessoire">Accessoire</option>
+        <option value="" disabled>Choisir un type de produit</option>
+        <option value="tee shirt">tee shirt</option>
+        <option value="Basket">Basket</option>
+        <option value="chemise">chemise</option>
+        <option value="Polos">Polos</option>
+        <option value="Bijoux">Bijoux</option>
+        <option value="Pantalon">Pantalon</option>
         </select>
         
         <input

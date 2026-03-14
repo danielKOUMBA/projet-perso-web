@@ -30,7 +30,7 @@ def login():
         "refresh_token",
         refresh_token,
         httponly=True,
-        secure=False, # True en production
+        secure=False, 
         samesite="None",
         path="/",
         max_age=7 * 24 * 60 * 60
@@ -38,7 +38,7 @@ def login():
 
         return response
 
-    # erreur envoyée clairement au frontend
+   
     return jsonify({'erreur': 'Email ou mot de passe incorrect'}), 401
 
 
