@@ -116,18 +116,18 @@ async function handleEdit(commandes:Todo,e){
         
         {/* FORMULAIRE */}
         <div className="flex justify-center mt-24">
-        <div className="bg-sky-50 border border-sky-200 rounded-xl shadow-lg p-6 w-[340px]">
+        <div className="bg-green-50 border border-green-200 rounded-xl shadow-lg p-6 w-[340px]">
         
         <form onSubmit={handleSubmit} className="space-y-3">
         
-        <h1 className="font-bold text-lg text-sky-900">
+        <h1 className="font-bold text-lg text-green-900">
         Entrez vos nouvelles commandes
         </h1>
         
         <input
         type="text"
         placeholder="nom du client..."
-        className="w-full p-2 border-b border-sky-300 bg-transparent outline-none"
+        className="w-full p-2 border-b border-green-300 bg-transparent outline-none"
         onChange={(e)=>setNom(e.target.value)}
         required
         />
@@ -135,7 +135,7 @@ async function handleEdit(commandes:Todo,e){
         <input
         type="number"
         placeholder="numero du client..."
-        className="w-full p-2 border-b border-sky-300 bg-transparent outline-none"
+        className="w-full p-2 border-b border-green-300 bg-transparent outline-none"
         onChange={(e)=>setNumero(e.target.value)}
         required
         />
@@ -143,7 +143,7 @@ async function handleEdit(commandes:Todo,e){
         <input
         type="text"
         placeholder="produits commander..."
-        className="w-full p-2 border-b border-sky-300 bg-transparent outline-none"
+        className="w-full p-2 border-b border-green-300 bg-transparent outline-none"
         onChange={(e)=>setProduit(e.target.value)}
         required
         />
@@ -151,7 +151,7 @@ async function handleEdit(commandes:Todo,e){
         <select
         value={type}
         onChange={(e)=>setType(e.target.value)}
-        className="w-full p-2 border border-sky-300 rounded-md bg-white"
+        className="w-full p-2 border border-green-300 rounded-md bg-white"
         required
         >
         <option value="" disabled>Choisir un type de paire</option>
@@ -165,7 +165,7 @@ async function handleEdit(commandes:Todo,e){
         
         <input
         type="date"
-        className="w-full p-2 border-b border-sky-300 bg-transparent outline-none"
+        className="w-full p-2 border-b border-green-300 bg-transparent outline-none"
         onChange={(e)=>setDate(e.target.value)}
         required
         />
@@ -173,7 +173,7 @@ async function handleEdit(commandes:Todo,e){
         <input
         type="number"
         placeholder="prix avancer..."
-        className="w-full p-2 border-b border-sky-300 bg-transparent outline-none"
+        className="w-full p-2 border-b border-green-300 bg-transparent outline-none"
         onChange={(e)=>setPrix_avancer(e.target.value)}
         required
         />
@@ -181,14 +181,14 @@ async function handleEdit(commandes:Todo,e){
         <input
         type="number"
         placeholder="prix total..."
-        className="w-full p-2 border-b border-sky-300 bg-transparent outline-none"
+        className="w-full p-2 border-b border-green-300 bg-transparent outline-none"
         onChange={(e)=>setPrix_payer(e.target.value)}
         required
         />
         
         <button
         type="submit"
-        className="w-full mt-3 bg-sky-400 hover:bg-sky-500 text-white font-semibold py-2 rounded-lg shadow-md transition"
+        className="w-full mt-3 bg-green-400 hover:bg-green-500 text-white font-semibold py-2 rounded-lg shadow-md transition"
         >
         enregistrer
         </button>
@@ -219,61 +219,61 @@ async function handleEdit(commandes:Todo,e){
         {update &&
         <div className="flex justify-center mt-10">
         
-        <div className="bg-white border border-sky-200 rounded-xl shadow-xl p-6 w-[340px]">
+        <div className="bg-white border border-green-200 rounded-xl shadow-xl p-6 w-[340px]">
         
         <form className="space-y-3">
         
         <p
-        className="text-right cursor-pointer font-bold text-sky-600"
+        className="text-right cursor-pointer font-bold text-green-600"
         onClick={()=>setUpdate(null)}
         >
         X
         </p>
         
-        <input className="w-full p-2 border-b border-sky-300 outline-none"
+        <input className="w-full p-2 border-b border-green-300 outline-none"
         type="text"
         value={update.nom}
         onChange={(e)=>setUpdate({...update,nom:e.target.value})}
         />
         
-        <input className="w-full p-2 border-b border-sky-300 outline-none"
+        <input className="w-full p-2 border-b border-green-300 outline-none"
         type="number"
         value={update.numero}
         onChange={(e)=>setUpdate({...update,numero:e.target.value})}
         />
         
-        <input className="w-full p-2 border-b border-sky-300 outline-none"
+        <input className="w-full p-2 border-b border-green-300 outline-none"
         type="text"
         value={update.produits}
         onChange={(e)=>setUpdate({...update,produits:e.target.value})}
         />
         
-        <input className="w-full p-2 border-b border-sky-300 outline-none"
+        <input className="w-full p-2 border-b border-green-300 outline-none"
         type="text"
         value={update.prix_avancer}
         onChange={(e)=>setUpdate({...update,prix_avancer:e.target.value})}
         />
         
-        <input className="w-full p-2 border-b border-sky-300 outline-none"
+        <input className="w-full p-2 border-b border-green-300 outline-none"
         type="number"
         value={update.prix_total}
         onChange={(e)=>setUpdate({...update,prix_total:e.target.value})}
         />
         
-        <input className="w-full p-2 border-b border-sky-300 outline-none"
+        <input className="w-full p-2 border-b border-green-300 outline-none"
         type="date"
         value={update.date}
         onChange={(e)=>setUpdate({...update,date:e.target.value})}
         />
         
-        <input className="w-full p-2 border-b border-sky-300 outline-none"
+        <input className="w-full p-2 border-b border-green-300 outline-none"
         type="text"
         value={update.type}
         onChange={(e)=>setUpdate({...update,type:e.target.value})}
         />
         
         <button
-        className="w-full bg-sky-400 hover:bg-sky-500 text-white py-2 rounded-lg shadow-md"
+        className="w-full bg-green-400 hover:bg-green-500 text-white py-2 rounded-lg shadow-md"
         onClick={(e)=>handleEdit(update,e)}
         >
         enregistrer
@@ -291,7 +291,7 @@ async function handleEdit(commandes:Todo,e){
         <div className="flex justify-center mt-10">
         
         <button
-        className="bg-sky-400 hover:bg-sky-500 text-white px-6 py-2 rounded-lg shadow-md transition"
+        className="bg-green-400 hover:bg-green-500 text-white px-6 py-2 rounded-lg shadow-md transition"
         onClick={AllCommande}
         >
         {loader ? "chargement..." : "voir toutes les commandes"}
@@ -326,7 +326,7 @@ async function handleEdit(commandes:Todo,e){
         {allCommande.map((commande)=>(
         <div
         key={commande.id}
-        className="bg-white border border-sky-200 rounded-xl shadow-md p-4 flex flex-wrap gap-3 items-center"
+        className="bg-white border border-green-200 rounded-xl shadow-md p-4 flex flex-wrap gap-3 items-center"
         >
         
         <p className="font-semibold">Nom: <span className="font-normal">{commande.nom}</span></p>
@@ -358,7 +358,7 @@ async function handleEdit(commandes:Todo,e){
         </button>
         
         <button
-        className="bg-sky-100 border border-sky-300 px-3 py-1 rounded-md shadow-sm hover:bg-sky-200"
+        className="bg-green-100 border border-green-300 px-3 py-1 rounded-md shadow-sm hover:bg-green-200"
         onClick={()=>setUpdate(commande)}
         >
         modifier
