@@ -5,7 +5,10 @@ import logos from '../assets/logos.JPG'
 
 
 export default function Header(){
-  <>
+  const [menu,setMenu]=useState(false)
+  const [logout,setLogout]=useState(false)
+    return(
+      <>
   
   <header>
   
@@ -109,5 +112,5 @@ export default function Header(){
   </div>
   
   </>
-  
+  )
   }
